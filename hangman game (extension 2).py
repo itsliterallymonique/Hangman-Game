@@ -95,11 +95,11 @@ while (True):
         wordSeen.append( '_ ')
     print("Here is your word: " + formWord(wordSeen))
     # prompt the user to input their guess
-    guess = input("Guess a letter: ")
+    guess = input("Guess a letter: ").lower()
     # if the guess is not a character, the user will be asked to guess the letter again
     while (len(guess) != 1):
         print("Please input a letter!")
-        guess = input("Guess a letter: ")
+        guess = input("Guess a letter: ").lower()
     # another infinite loop while the user guesses the word
     while (True):
         # find where the letter guessed appears in the word
@@ -135,14 +135,14 @@ while (True):
         else:
             print("The letters already guessed are:", lettersGuessed)
         # prompt the user to input their guess
-        guess = input("Guess a letter: ")
+        guess = input("Guess a letter: ").lower()
         # we can also ensure the user hasn't guessed this letter before
         while ((guess in lettersGuessed) or len(guess) != 1):
             if (guess in lettersGuessed):
                 print("You have already guessed this letter before! Guess a new one!")
             else:
                 print("Please input a letter!")
-            guess = input("Guess a letter: ")
+            guess = input("Guess a letter: ").lower()
     # set the variable tryAgain
     tryAgain = ""
     # while the user doesn't input 'yes' or 'no' as a response...
